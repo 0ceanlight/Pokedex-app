@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Pokedex
 //
-//  Created by Christine Frederick on 10/16/20.
+//  Created by Oceanlight on 10/16/20.
 //
 
 import UIKit
