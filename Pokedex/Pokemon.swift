@@ -15,7 +15,6 @@ struct PokemonList: Codable {
 
 struct Pokemon: Codable {
     let name: String
-//    let number: Int
     let url: String
 }
 

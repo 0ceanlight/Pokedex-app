@@ -22,6 +22,10 @@ class PokemonViewController: UIViewController {
         type1Label.text = ""
         type2Label.text = ""
         
+        func capitalize(text: String) -> String {
+            return text.prefix(1).uppercased() + text.dropFirst()
+        }
+        
         let url = URL(string: pokemon.url)
         guard let u = url else {
             return
@@ -38,7 +42,7 @@ class PokemonViewController: UIViewController {
                 let pokemonData = try JSONDecoder().decode(PokemonData.self, from: data)
                 
                 DispatchQueue.main.async {
-                    self.nameLabel.text = self.pokemon.name
+                    self.nameLabel.text = capitalize(text: self.pokemon.name)
                     self.numberLabel.text = String(format: "#%03d", pokemonData.id)
                     
                     for typeEntry in pokemonData.types {
