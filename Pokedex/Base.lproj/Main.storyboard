@@ -16,28 +16,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Furanu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZvD-3A-iFa">
-                                <rect key="frame" x="20" y="438" width="374" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Furanu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZvD-3A-iFa">
+                                <rect key="frame" x="145" y="360.5" width="124.5" height="50.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="#001" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pok-HE-Tp5">
-                                <rect key="frame" x="20" y="498" width="374" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7k-Kl-BOq">
+                                <rect key="frame" x="190.5" y="509" width="33" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fire" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpL-VH-GjS">
+                                <rect key="frame" x="189.5" y="552.5" width="35.5" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#001" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pok-HE-Tp5">
+                                <rect key="frame" x="174.5" y="431.5" width="65" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="a7k-Kl-BOq" firstAttribute="top" secondItem="pok-HE-Tp5" secondAttribute="bottom" constant="44" id="9LE-m1-3n0"/>
+                            <constraint firstItem="pok-HE-Tp5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="AY8-9S-FTc"/>
+                            <constraint firstItem="pok-HE-Tp5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NTd-cS-ZJ8"/>
+                            <constraint firstItem="pok-HE-Tp5" firstAttribute="top" secondItem="ZvD-3A-iFa" secondAttribute="bottom" constant="20.5" id="SD3-Md-7VE"/>
+                            <constraint firstItem="fpL-VH-GjS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YUj-On-Nw6"/>
+                            <constraint firstItem="ZvD-3A-iFa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZWU-bz-77z"/>
+                            <constraint firstItem="fpL-VH-GjS" firstAttribute="top" secondItem="a7k-Kl-BOq" secondAttribute="bottom" constant="12" id="sqB-FR-bHf"/>
+                            <constraint firstItem="a7k-Kl-BOq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="thj-ja-G8e"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="g9e-Mj-WYm"/>
                     <connections>
                         <outlet property="nameLabel" destination="ZvD-3A-iFa" id="9xh-iz-g4D"/>
                         <outlet property="numberLabel" destination="pok-HE-Tp5" id="atF-9E-fEd"/>
+                        <outlet property="type1Label" destination="a7k-Kl-BOq" id="L6c-9w-UPo"/>
+                        <outlet property="type2Label" destination="fpL-VH-GjS" id="tVP-st-w5E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

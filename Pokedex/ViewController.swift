@@ -8,12 +8,46 @@
 import UIKit
 
 class ViewController: UITableViewController {
+    
+    func capitalize(text: String) -> String {
+        return text.prefix(1).uppercased() + text.dropFirst()
+    }
 
-    let pokemon = [
-        Pokemon(name: "Furanu", number: 1),
-        Pokemon(name: "Koka", number: 2),
-        Pokemon(name: "Yoshiwa", number: 3)
-    ]
+    var pokemon: [Pokemon] = []
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let url = URL(string: "https://pokeapi.co/api/v2/pokemon?limit=151")
+        guard let u = url else {
+            return
+        }
+        
+        // fetch data from api
+        URLSession.shared.dataTask(with: u) { (data, response, error) in
+            guard let data = data else {
+                return
+            }
+            
+            // decode json data
+            do {
+                let pokemonList = try JSONDecoder().decode(PokemonList.self, from: data)
+                self.pokemon = pokemonList.results
+                
+                // jump to main thread to reload the updated table
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                
+            } catch let error {
+                print(error)
+            }
+            
+        }.resume()
+        
+    }
+    
+
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -26,7 +60,7 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonCell", for: indexPath)
         
-        cell.textLabel?.text = pokemon[indexPath.row].name
+        cell.textLabel?.text = capitalize(text: pokemon[indexPath.row].name)
         return cell
     }
     
